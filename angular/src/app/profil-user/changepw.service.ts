@@ -1,0 +1,20 @@
+// changepw.service.ts
+
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+
+@Injectable({
+  providedIn: "root",
+})
+export class ChangePWService {
+  private baseURL = "http://localhost:8080/auth";
+  constructor(private http: HttpClient) {}
+
+  changePW(username: string, password: string): Observable<any> {
+    return this.http.post<any>(`${this.baseURL}/change_pw`, {
+      username,
+      password,
+    });
+  }
+}

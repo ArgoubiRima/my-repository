@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="delete-user.component.css" />
+
+<div class="content">
+  <h1 class="alert">
+    Are you sure you want to delete this person from this list?
+  </h1>
+  <br /><br />
+  <div class="button-container">
+    <button
+      (click)="confirmDelete()"
+      class="btn btn-danger delete-button animated fadeIn"
+    >
+      Delete
+    </button>
+    <button
+      routerLink="/listofperson"
+      class="btn btn-secondary cancel-button animated fadeIn"
+    >
+      Cancel
+    </button>
+  </div>
+</div>

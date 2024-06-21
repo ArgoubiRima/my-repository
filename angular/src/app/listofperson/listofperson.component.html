@@ -1,0 +1,120 @@
+<div class="bg-blue-500 min-h-screen flex justify-center items-center">
+  <div class="bg-white p-8 rounded-lg">
+    <div class="container mx-auto">
+      <h2 id="title" class="text-3xl font-semibold mb-4">List of Persons:</h2>
+      <a
+        id="ajouter-btn"
+        routerLink="/addformulaire"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-3 mb-4 inline-block"
+        >Add a person</a
+      >
+      <button
+        (click)="disconnect()"
+        class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded ml-4"
+      >
+        Disconnect
+      </button>
+
+      <div class="overflow-x-auto mt-4">
+        <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[100px]">
+                ID
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[150px]">
+                Last Name
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[150px]">
+                First Name
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[200px]">
+                Email
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[200px]">
+                Address
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[150px]">
+                Phone Number
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[150px]">
+                Date of Birth
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[100px]">
+                Gender
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[150px]">
+                Fingerprint (Code)
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[150px]">
+                Photo
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[200px]">
+                Photo of the Person
+              </th>
+              <th class="text-left py-2 px-3 border border-gray-300 min-w-[100px]">
+                Action
+              </th>
+            </tr>
+          </thead>
+
+          <tbody class="divide-y divide-gray-200">
+            <tr *ngFor="let person of persons">
+              <td class="py-3 px-4 border border-gray-300 min-w-[120px]">
+                {{ person.id }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[150px]">
+                {{ person.lastname }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[150px]">
+                {{ person.firstname }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[200px]">
+                {{ person.email }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[200px]">
+                {{ person.address }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[150px]">
+                {{ person.phoneNumber }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[150px]">
+                {{ person.dob }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[100px]">
+                {{ person.gender }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[150px]">
+                {{ person.fingerprintCode }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[150px]">
+                {{ person.photo }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[200px]">
+                {{ person.photo_of_the_person }}
+              </td>
+              <td class="py-3 px-4 border border-gray-300 min-w-[100px]">
+                <a
+                  routerLink="/update-person/{{ person.id }}"
+                  class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded"
+                  >Edit</a
+                >
+                <a
+                  routerLink="/delete-user/{{ person.id }}"
+                  class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded"
+                  >Delete</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <img
+        class="logo mt-8 mx-auto w-48 rounded-full hover:scale-105 transition-transform duration-300"
+        src="assets/images.jpeg"
+        alt="Company Logo"
+      />
+    </div>
+  </div>
+</div>
