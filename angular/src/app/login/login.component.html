@@ -1,0 +1,71 @@
+<div class="bg-blue-500">
+  <div class="container mx-auto py-16">
+    <div class="max-w-7xl mx-auto rounded-lg shadow-lg flex">
+      <div class="w-1/3 p-22 relative bg-white">
+        <h1
+          class="text-4xl font-bold text-blue-500 absolute top-10 left-1/2 transform -translate-x-1/2 text-center w-full"
+        >
+          SecureTouch
+        </h1>
+        <img
+          class="w-72 h-72 mx-auto mt-16 rounded-full"
+          src="assets/images.jpeg"
+          alt="Logo"
+        />
+      </div>
+      <div class="w-2/3 p-20 bg-white">
+        <!-- Votre contenu existant ici -->
+        <div class="mb-4">
+          <label for="login" class="block text-sm font-bold text-gray-700"
+            >Login :</label
+          >
+          <input
+            [(ngModel)]="loginValue"
+            required
+            id="login"
+            type="text"
+            placeholder="Login"
+            class="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-bold text-gray-700"
+            >Password :</label
+          >
+          <input
+            [(ngModel)]="passwordValue"
+            required
+            id="password"
+            type="password"
+            placeholder="Password"
+            class="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <div class="mb-4">
+          <label for="identityCode" class="block text-sm font-bold text-gray-700"
+            >Identity Code (Note: If you are a normal user, enter '0000' as the
+            identity code)</label
+          >
+          <input
+            [(ngModel)]="codeValue"
+            required
+            id="identityCode"
+            type="text"
+            placeholder="Enter Identity Code"
+            class="px-4 py-2 w-full border rounded-md focus:outline-none focus:border-blue-500"
+          />
+        </div>
+        <p class="mt-4 text-sm text-gray-600">
+          If you want to authenticate with your fingerprint, click
+          <a routerLink="/login-fingerprint" class="text-blue-500">here</a>.
+        </p>
+        <button
+          type="button"
+          (click)="login()"
+          class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Login
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

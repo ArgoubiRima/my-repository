@@ -1,0 +1,113 @@
+<div class="min-h-screen bg-blue-500 flex justify-center items-center">
+  <div class="container mx-auto my-10 p-5">
+    <div class="content flex justify-center items-center">
+      <div class="form-container w-full max-w-4xl bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <div class="flex items-center mb-6">
+          <img class="logo w-24 h-24 mr-4" src="assets/images.jpeg" alt="Company Logo" />
+          <h2 class="title text-3xl font-bold text-center">Modify an existing person</h2>
+        </div>
+        <form (ngSubmit)="modifyPerson()" #personForm="ngForm">
+          <div class="mb-4">
+            <label for="lastname" class="block text-gray-700 text-sm font-bold mb-2">Last Name:</label>
+            <input
+              type="text"
+              id="lastname"
+              [(ngModel)]="person.lastname"
+              name="lastname"
+              placeholder="Last Name"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="firstname" class="block text-gray-700 text-sm font-bold mb-2">First Name:</label>
+            <input
+              type="text"
+              id="firstname"
+              [(ngModel)]="person.firstname"
+              name="firstname"
+              placeholder="First Name"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+            <input
+              type="email"
+              id="email"
+              [(ngModel)]="person.email"
+              name="email"
+              placeholder="Email Address"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="address" class="block text-gray-700 text-sm font-bold mb-2">Address:</label>
+            <input
+              type="text"
+              id="address"
+              [(ngModel)]="person.address"
+              name="address"
+              placeholder="Address"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="phoneNumber" class="block text-gray-700 text-sm font-bold mb-2">Phone Number:</label>
+            <input
+              type="tel"
+              id="phoneNumber"
+              [(ngModel)]="person.phoneNumber"
+              name="phoneNumber"
+              placeholder="Phone Number"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="dob" class="block text-gray-700 text-sm font-bold mb-2">Date of Birth:</label>
+            <input
+              type="text"
+              id="dob"
+              [(ngModel)]="person.dob"
+              name="dob"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="gender" class="block text-gray-700 text-sm font-bold mb-2">Gender:</label>
+            <select
+              id="gender"
+              [(ngModel)]="person.gender"
+              name="gender"
+              required
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            >
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="flex items-center justify-between">
+            <button
+              type="submit"
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Modify
+            </button>
+            <button
+              type="button"
+              routerLink="/listofperson"
+              class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
